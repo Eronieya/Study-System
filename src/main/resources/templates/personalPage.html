@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link th:href="@{/css/fullpage.min.css}" rel="stylesheet" type="text/css" href="../static/css/fullpage.min.css">
+    <link th:href="@{/css/myclass.css}" rel="stylesheet" type="text/css" href="../static/css/myclass.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/personal.css">
+    <script th:src="@{/js/jquery.min.js}" src="../static/js/jquery.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/fullpage.min.js}" src="../static/js/fullpage.min.js"></script>
+    <script th:src="@{/js/personalPage.js}" src="../static/js/personalPage.js"></script>
+    <title>个人主页</title>
+    <script>
+        // fullpage函数
+        $(function(){
+            $('#fullpage').fullpage({
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                menu: '#menu'
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+<div class="top">
+    <div class="menu">
+        <ul class="nav1">
+            <li><a href="javascript:">首页</a></li>
+            <li><a href="javascript:">课堂中心</a></li>
+            <li><a href="myclass.html">我的课堂</a></li>
+            <li><a href="personalPage.html">个人主页</a></li>
+            <li><a href="javascript:">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<ul id="menu">
+    <li data-menuanchor="page1" class="active"><a href="#page1">我的信息</a></li>
+    <li data-menuanchor="page2"><a href="#page2">用户信息</a></li>
+    <li data-menuanchor="page3"><a href="#page3">账号管理</a></li>
+    <li data-menuanchor="page4"><a href="#page4">课程管理</a></li>
+</ul>
+<div id="hide" val="hide">
+    <a></a>
+</div>
+
+<div id="fullpage">
+    <div class="section section1">
+        <div class="section_content">
+            <div class="content">
+                <header>
+                    <span>张</span>
+                    <div>eronieya</div>
+                    <div id="mood">
+                        <div class="edit"><a></a></div>
+                        心情
+                    </div>
+                </header>
+                <div class="content-body my-info">
+                    <table class="class-info-box">
+                        <thead>
+                            <th colspan="3">课程信息</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="conf-class"><a message="myClass"></a></div>
+                                    <div>我加入的课程</div>
+                                    <div>2</div>
+                                </td>
+                                <td>
+                                    <div>参与签到</div>
+                                    <div>50</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="conf-second-row wait"><a message="myWork"></a></div>
+                                    <div>待完成任务</div>
+                                    <div>2</div>
+                                </td>
+                                <td>
+                                    <div>已缺席任务</div>
+                                    <div>0</div>
+                                </td>
+                                <td>
+                                    <div class="conf-second-row false"><a message="myMissSign"></a></div>
+                                    <div>缺席次数</div>
+                                    <div>3</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="left-box">
+                        <table class="my-class">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>加入时间</th>
+                                <th>查看次数</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>J2EE课程设计</td>
+                                    <td>2020.1.28</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>Ajax软件开发</td>
+                                    <td>2020.1.28</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="my-sign">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>签到时间</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>J2EE课程设计</td>
+                                    <td>2020.6.15</td>
+                                </tr>
+                                <tr>
+                                    <td>J2EE课程设计</td>
+                                    <td>2020.6.11</td>
+                                </tr>
+                                <tr>
+                                    <td>Ajax软件开发</td>
+                                    <td>2020.6.15</td>
+                                </tr>
+                                <tr>
+                                    <td>Ajax软件开发</td>
+                                    <td>2020.6.13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="my-miss-sign">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>上课时间</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>大型软件实施与应用</td>
+                                    <td>2020.6.2</td>
+                                </tr>
+                                <tr>
+                                    <td>大型软件实施与应用</td>
+                                    <td>2020.6.9</td>
+                                </tr>
+                                <tr>
+                                    <td>大型软件实施与应用</td>
+                                    <td>2020.6.13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="my-work" style="display: none">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>作业内容</th>
+                                <th>截止时间</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>J2EE课程设计</td>
+                                    <td>完成大作业</td>
+                                    <td>2020.6.14</td>
+                                </tr>
+                                <tr>
+                                    <td>Ajax软件开发</td>
+                                    <td>完成大作业</td>
+                                    <td>2020.7.1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="my-miss-work">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>作业内容</th>
+                                <th>错过日期</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>大型软件实施与应用</td>
+                                    <td>完成第三章作业</td>
+                                    <td>2020.6.13</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="hide-left"><a></a></div>
+                    </div>
+
+                    <table class="exm-info-box">
+                        <thead>
+                            <th colspan="3">考试信息</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="conf-exam"><a message="myExam"></a></div>
+                                    <div>我所有的考试</div>
+                                    <div>2</div>
+                                </td>
+                                <td>
+                                    <div>优秀次数</div>
+                                    <div>1</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="conf-second-row wait"><a message="waitMe"></a></div>
+                                    <div>待参加考试</div>
+                                    <div>1</div>
+                                </td>
+                                <td>
+                                    <div>已缺席考试</div>
+                                    <div>0</div>
+                                </td>
+                                <td>
+                                    <div class="conf-second-row false"><a message="myBad"></a></div>
+                                    <div>不及格</div>
+                                    <div>1</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="right-box">
+                        <table class="my-exam">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>考试开始时间</th>
+                                <th>考试结束时间</th>
+                                <th>考试状态</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>J2EE课程设计</td>
+                                    <td>2020.6.15</td>
+                                    <td>2020.6.16</td>
+                                    <td>已参加</td>
+                                </tr>
+                                <tr>
+                                    <td>Ajax软件开发</td>
+                                    <td>2020.6.1</td>
+                                    <td>2020.7.1</td>
+                                    <td>未参加</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="my-good">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>考试分数</th>
+                                <th>考试结束时间</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>J2EE课程设计</td>
+                                    <td>90</td>
+                                    <td>2020.6.15</td>
+                                </tr>
+                                <tr>
+                                    <td>Ajax软件开发</td>
+                                    <td>92</td>
+                                    <td>2020.7.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="my-miss-exam">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>考试结束时间</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>大型软件实施与应用</td>
+                                    <td>2020.6.1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="wait-me">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>考试开始时间</th>
+                                <th>考试结束时间</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ajax软件开发</td>
+                                    <td>2020.6.1</td>
+                                    <td>2020.7.1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="my-bad">
+                            <thead>
+                                <th>课程名称</th>
+                                <th>考试分数</th>
+                                <th>考试结束时间</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>大型软件实施与应用</td>
+                                    <td>50</td>
+                                    <td>2020.6.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="hide-right"><a></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section2">
+        <div class="section_content">
+            <div class="content">
+                <header>用户信息</header>
+                <div class="content-body">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td colspan="2"><span class="head">张</span></td>
+                            </tr>
+                            <tr>
+                                <td>用户名</td>
+                                <td>
+                                    <span class="information">eronieya</span>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>姓名</td>
+                                <td>
+                                    <span class="information">张先生</span>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>性别</td>
+                                <td>
+                                    <span class="information">男</span>
+                                    <input id="male" name="sex" type="radio" value="男"><label for="male">男</label>
+                                    <input id="female" name="sex" type="radio" value="女"><label for="female">女</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>出生日期</td>
+                                <td>
+                                    <span class="information">1999-11-20</span>
+                                    <input type="date">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>身份</td>
+                                <td>
+                                    <span class="information">学生</span>
+                                    <input id="student" name="identity" type="radio" value="学生"><label for="student">学生</label>
+                                    <input id="teacher" name="identity" type="radio" value="教师"><label for="teacher">教师</label>
+                                    <input id="other" name="identity" type="radio" value="其他"><label for="other">其他</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>在读学校</td>
+                                <td>
+                                    <span class="information">吉林大学珠海学院</span>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>所属院系</td>
+                                <td>
+                                    <span class="information">计算机学院</span>
+                                    <input type="text">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="btn-list">
+                        <button type="button" class="btn btn-default after-edit" id="save">确定</button>
+                        <button type="button" class="btn btn-default after-edit" id="cancel">取消</button>
+                        <button type="button" class="btn btn-default before-edit">编辑</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section3">
+        <div class="section_content">
+            <div class="content">
+                <header>账号管理</header>
+                <div class="content-body">
+                    <div class="account-info-box">
+                        <div class="account-png phone"></div>
+                        <div class="account-content">
+                            <span>关联手机：</span>
+                            <span>152 1988 6793</span>
+                            <ul>
+                                <li>关联手机可以使用手机号加密码登录</li>
+                                <li>密码丢失时可以通过手机轻松找回</li>
+                            </ul>
+                        </div>
+                        <div class="account-button">
+                            <button>绑定手机</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="account-info-box">
+                        <div class="account-png letter"></div>
+                        <div class="account-content">
+                            <span>关联邮箱：</span>
+                            <span>771764551@qq.com</span>
+                            <ul>
+                                <li>关联邮箱后，可使用邮箱加密码进行登录</li>
+                                <li>密码丢失时可以通过邮箱轻松找回</li>
+                            </ul>
+                        </div>
+                        <div class="account-button">
+                            <button>绑定邮箱</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="account-info-box">
+                        <div class="account-png lock"></div>
+                        <div class="account-content">
+                            <span>修改密码</span>
+                            <ul>
+                                <li>请不要向他人透露账号密码</li>
+                            </ul>
+                        </div>
+                        <div class="account-button">
+                            <button>修改密码</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section4">
+        <div class="section_content">
+            <div class="content">
+                <header>课程管理</header>
+                <div class="content-body">
+                    <!--  导航栏  -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#mycreate" aria-controls="home" role="tab" data-toggle="tab">我创建的</a></li>
+                        <li role="presentation"><a href="#myjoin" aria-controls="profile" role="tab" data-toggle="tab">我加入的</a></li>
+                    </ul>
+
+                    <!--  相应内容  -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="mycreate">
+                            <ul class="all-my-class">
+                                <li class="my-item">
+                                    <div class="my-item-head"></div>
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>维</p>
+                                        </div>
+                                        <div class="class-name"><span>我创建的课程</span></div>
+                                        <div class="teacher"><span>2020-6-24</span></div>
+                                    </div>
+                                </li>
+
+                                <li class="my-item last-item add-class"></li>
+                            </ul>
+
+                            <div class="create-class">
+                                <div class="cancel">X</div>
+                                <div class="save"><img src="../static/img/benefits.png" width="100px" height="100px"></div>
+                                <div class="create-class-content">
+
+                                    <div class="create-class-left">
+
+                                        <div class="class-head"></div>
+                                        <div class="class-info">
+                                            <label for="class-name">课程名称</label>
+                                            <input id="class-name">
+
+                                            <label for="creator">课程创建人</label>
+                                            <input id="creator">
+                                        </div>
+                                        <div class="class-introduce">
+                                            <label for="introduce">课程简介</label>
+                                            <textarea class="text-area" id="introduce"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="create-class-right">
+                                        <div class="list">
+                                            <div>
+                                                <img src="../static/img/remove.png" width="30px" height="30px" class="remove">
+                                                <img src="../static/img/addto.png" width="30px" height="30px" class="add">
+                                                <span>第一章</span>
+                                            </div>
+                                            <ul class="second-list" id="第一章">
+                                                <li>
+                                                    第一节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    第二节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    <img src="../static/img/close.png" width="26px" height="26px" class="part-edit btn-close">
+                                                    <img src="../static/img/check.png" width="26px" height="26px" class="part-edit btn-check">
+                                                    <input class="add-part" type="text">
+                                                </li>
+                                            </ul>
+
+                                            <div>
+                                                <img src="../static/img/remove.png" width="30px" height="30px" class="remove">
+                                                <img src="../static/img/addto.png" width="30px" height="30px" class="add">
+                                                <span>第二章</span>
+                                            </div>
+                                            <ul class="second-list" id="第二章">
+                                                <li>
+                                                    第一节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    第二节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    <img src="../static/img/close.png" width="26px" height="26px" class="part-edit btn-close">
+                                                    <img src="../static/img/check.png" width="26px" height="26px" class="part-edit btn-check">
+                                                    <input class="add-part" type="text">
+                                                </li>
+                                            </ul>
+
+                                            <div>
+                                                <img src="../static/img/remove.png" width="30px" height="30px" class="remove">
+                                                <img src="../static/img/addto.png" width="30px" height="30px" class="add">
+                                                <span>第三章</span>
+                                            </div>
+                                            <ul class="second-list" id="第三章">
+                                                <li>
+                                                    第一节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    第二节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    第三节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    <img src="../static/img/close.png" width="26px" height="26px" class="part-edit btn-close">
+                                                    <img src="../static/img/check.png" width="26px" height="26px" class="part-edit btn-check">
+                                                    <input class="add-part" type="text">
+                                                </li>
+                                            </ul>
+
+                                            <div>
+                                                <img src="../static/img/remove.png" width="30px" height="30px" class="remove">
+                                                <img src="../static/img/addto.png" width="30px" height="30px" class="add">
+                                                <span>第四章</span>
+                                            </div>
+                                            <ul class="second-list" id="第四章">
+                                                <li>
+                                                    第一节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    第二节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    <img src="../static/img/close.png" width="26px" height="26px" class="part-edit btn-close">
+                                                    <img src="../static/img/check.png" width="26px" height="26px" class="part-edit btn-check">
+                                                    <input class="add-part" type="text">
+                                                </li>
+                                            </ul>
+
+                                            <div>
+                                                <img src="../static/img/remove.png" width="30px" height="30px" class="remove">
+                                                <img src="../static/img/addto.png" width="30px" height="30px" class="add">
+                                                <span>第五章</span>
+                                            </div>
+                                            <ul class="second-list" id="第五章">
+                                                <li>
+                                                    第一节
+                                                    <img src="../static/img/remove.png" width="26px" height="26px" class="remove">
+                                                    <img src="../static/img/upload.png" width="26px" height="26px" class="upload">
+                                                </li>
+                                                <li>
+                                                    <img src="../static/img/close.png" width="26px" height="26px" class="part-edit btn-close">
+                                                    <img src="../static/img/check.png" width="26px" height="26px" class="part-edit btn-check">
+                                                    <input class="add-part" type="text">
+                                                </li>
+                                            </ul>
+
+                                            <div id="add-chapter">
+                                                <span>
+                                                    <img src="../static/img/close.png" width="26px" height="26px" class="part-edit hide-chapter-editor">
+                                                    <img src="../static/img/check.png" width="26px" height="26px" class="part-edit save-chapter">
+                                                    <input class="add-part" type="text">
+                                                </span>
+                                            </div>
+                                            <div class="add-chapter">
+                                                <span>+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade" id="myjoin">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head"></div>
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>马</p>
+                                        </div>
+                                        <div class="class-name"><span>J2EE架构与程序设计</span></div>
+                                        <div class="teacher"><span>2020-3-28</span></div>
+                                    </div>
+                                </li>
+
+                                <li class="my-item">
+                                    <div class="my-item-head"></div>
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>罗</p>
+                                        </div>
+                                        <div class="class-name"><span>Ajax实验课</span></div>
+                                        <div class="teacher"><span>2020-4-2</span></div>
+                                    </div>
+                                </li>
+
+                                <li class="my-item">
+                                    <div class="my-item-head"></div>
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>李</p>
+                                        </div>
+                                        <div class="class-name"><span>Ajax理论课</span></div>
+                                        <div class="teacher"><span>2020-4-2</span></div>
+                                    </div>
+                                </li>
+
+                                <li class="my-item last-item"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

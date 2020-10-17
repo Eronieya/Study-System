@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link th:href="@{/css/fullpage.min.css}" rel="stylesheet" type="text/css" href="../static/css/fullpage.min.css">
+    <link th:href="@{/css/myclass.css}" rel="stylesheet" type="text/css" href="../static/css/myclass.css">
+    <script th:src="@{/js/jquery.min.js}" src="../static/js/jquery.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+    <script th:src="@{/js/fullpage.min.js}" src="../static/js/fullpage.min.js"></script>
+    <title>我的课堂</title>
+    <script>
+        // fullpage函数
+        $(function(){
+            $('#fullpage').fullpage({
+                sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                menu: '#menu'
+            });
+        });
+
+        // 点击隐藏按钮， 隐藏列表， 更换按钮内容。
+        $(function () {
+            $("#hide").click(function () {
+                if ($("#hide").attr("val") == "hide") {
+                    $("#menu").animate({left: '-200px'});
+                    $("#hide a").css({
+                        background: "url(/img/next.png) no-repeat",
+                        backgroundSize: "40px 40px"
+                    }).parent().attr("val", "out");
+                } else {
+                    $("#menu").animate({left: '46px'});
+                    $("#hide a").css({
+                        background: "url(/img/back.png) no-repeat",
+                        backgroundSize: "40px 40px"
+                    }).parent().attr("val", "hide");
+                }
+            })
+
+            // 隐藏按钮选定时透明度的改变
+            $("#hide").hover(function () {
+                $("#hide a").fadeTo(1,0.5);
+            },function () {
+                $("#hide a").fadeTo(1,1);
+            })
+        })
+
+        $(function () {
+            // 经过my-item的事件
+            $(".my-item").hover( function () {
+                $(this).css({
+                    boxShadow: "0px 0px 5px 3px"
+                })
+            },
+            function () {
+                $(this).css({
+                    boxShadow: "none",
+                    textShadow: "none"
+                })
+            });
+
+            // 经过my-item-head的事件 经过head-img的事件
+            $(".my-item-head , .head-img, .class-name, .teacher").hover( function () {
+                $(this).css({
+                    boxShadow: "0 0 2px 1px white",
+                    textShadow: "0 0 5px"
+                })
+            },
+            function () {
+                $(this).css({
+                    boxShadow: "none",
+                    textShadow: "none"
+                })
+            });
+        })
+    </script>
+</head>
+
+<body>
+
+<div class="top">
+    <div class="menu">
+        <ul class="nav1">
+            <li><a href="javascript:">首页</a></li>
+            <li><a href="javascript:">课堂中心</a></li>
+            <li><a href="myclass.html">我的课堂</a></li>
+            <li><a href="/personalPage">个人主页</a></li>
+            <li><a href="javascript:">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<ul id="menu">
+    <li data-menuanchor="page1" class="active"><a href="#page1">我的课堂</a></li>
+    <li data-menuanchor="page2"><a href="#page2">随堂测试</a></li>
+    <li data-menuanchor="page3"><a href="#page3">疑难解答</a></li>
+    <li data-menuanchor="page4"><a href="#page4">我的任务</a></li>
+</ul>
+<div id="hide" val="hide">
+    <a></a>
+</div>
+
+<div id="fullpage">
+    <div class="section section1">
+        <div class="section_content">
+            <div class="content">
+                <header>我的课堂</header>
+                <div class="content-body">
+                    <!--  导航栏  -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#myclass" aria-controls="home" role="tab" data-toggle="tab">我的选课</a></li>
+                        <li role="presentation"><a href="#nofinish" aria-controls="profile" role="tab" data-toggle="tab">未结课</a></li>
+                        <li role="presentation"><a href="#finish" aria-controls="messages" role="tab" data-toggle="tab">已结课</a></li>
+                    </ul>
+
+                    <!--  相应内容  -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="myclass">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head book"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>马</p>
+                                        </div>
+                                        <div class="class-name"><span>J2EE架构与程序设计</span></div>
+                                        <div class="teacher"><span>马老师</span></div>
+                                    </div>
+                                </li>
+                                <li class="my-item">
+                                    <div class="my-item-head book"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>罗</p>
+                                        </div>
+                                        <div class="class-name"><span>Ajax软件开发</span></div>
+                                        <div class="teacher"><span>罗老师</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="nofinish">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head book"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>罗</p>
+                                        </div>
+                                        <div class="class-name"><span>Ajax软件开发</span></div>
+                                        <div class="teacher"><span>罗老师</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="finish">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head book"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>马</p>
+                                        </div>
+                                        <div class="class-name"><span>J2EE架构与程序设计</span></div>
+                                        <div class="teacher"><span>2020-6-21</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section2">
+        <div class="section_content">
+            <div class="content">
+                <header>随堂测试</header>
+                <div class="content-body">
+                    <!--  导航栏  -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#mytest" aria-controls="home" role="tab" data-toggle="tab">我的测试</a></li>
+                        <li role="presentation"><a href="#done" aria-controls="messages" role="tab" data-toggle="tab">已完成</a></li>
+                    </ul>
+
+                    <!--  相应内容  -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="mytest">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head test2"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>罗</p>
+                                        </div>
+                                        <div class="class-name"><span>Ajax实验4</span></div>
+                                        <div class="teacher"><span>2020-6-25</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade" id="done">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head good"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>优</p>
+                                        </div>
+                                        <div class="class-name"><span>J2EE第一单元测试</span></div>
+                                        <div class="teacher"><span>2020-6-21</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section3">
+        <div class="section_content">
+            <div class="content">
+                <header>疑难解答</header>
+                <div class="content-body">
+                    <!--  导航栏  -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#discussion" aria-controls="home" role="tab" data-toggle="tab">课堂讨论</a></li>
+                        <li role="presentation"><a href="#teacher" aria-controls="profile" role="tab" data-toggle="tab">教师解答</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">私聊信息</a></li>
+                    </ul>
+
+                    <!--  相应内容  -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="discussion">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head idea">
+                                        <span class="tips">99+</span>
+                                    </div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>班</p>
+                                        </div>
+                                        <div class="class-name"><span>J2EE讨论区</span></div>
+                                        <div class="teacher"><span>马老师</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade" id="teacher">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head idea">
+                                        <span class="tips">1</span>
+                                    </div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>师</p>
+                                        </div>
+                                        <div class="class-name"><span>J2EE架构与程序设计</span></div>
+                                        <div class="teacher"><span>马老师</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="messages">个人私聊模块</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section4">
+        <div class="section_content">
+            <div class="content">
+                <header>我的任务</header>
+                <div class="content-body">
+                    <!--  导航栏  -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#classwork" aria-controls="home" role="tab" data-toggle="tab">待完成作业</a></li>
+                        <li role="presentation"><a href="#classexam" aria-controls="profile" role="tab" data-toggle="tab">待参加考试</a></li>
+                        <li role="presentation"><a href="#classdone" aria-controls="messages" role="tab" data-toggle="tab">已完成</a></li>
+                    </ul>
+
+                    <!--  相应内容  -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="classwork">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head test2"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>罗</p>
+                                        </div>
+                                        <div class="class-name"><span>Ajax实验4</span></div>
+                                        <div class="teacher"><span>2020-6-25</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade" id="classexam">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head test"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>罗</p>
+                                        </div>
+                                        <div class="class-name"><span>Ajax软件开发技术</span></div>
+                                        <div class="teacher"><span>期末考试</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane fade" id="classdone">
+                            <ul>
+                                <li class="my-item">
+                                    <div class="my-item-head good"></div>
+
+                                    <div class="my-item-bottom">
+                                        <div class="head-img">
+                                            <p>优</p>
+                                        </div>
+                                        <div class="class-name"><span>J2EE架构与程序设计</span></div>
+                                        <div class="teacher"><span>期末考试</span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".section4 .my-item").on("click", function () {
+            // 模拟表单提交
+            let temp_form = document.createElement("form");
+            temp_form.action = "/exam";
+            temp_form.method = "post";
+            temp_form.style.display = "none";
+
+            let opt = document.createElement("input");
+            opt.type = "text";
+            opt.name = "subjectName";
+            opt.value = "j2ee";
+            temp_form.appendChild(opt);
+            document.body.appendChild(temp_form);
+            temp_form.submit();
+        })
+
+    })
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0;}
+ul { list-style-type: none;}
+body { background-color: rgba(255, 255, 255, 0);}
+.guider { margin: 0; padding: 0; position: fixed; left: 20px; top:280px ;list-style-type: none; z-index: 70; width: 155px; text-align: center;}
+.guider ul { text-align: justify;}
+.guider span { display: block; color: rgba(255, 255, 255, 0.8); margin: 0 5px 5px 0; font-size: 16px;}
+.guider li { display: inline; margin:30px 10px 0 0; font-size: 14px;}
+.guider a { transition: 0.5s; display: table-caption; padding: 2px 9px; background-color: rgba(255, 255, 255, 0.8); color: rgba(51, 51, 51, 0.9); text-decoration: none; border-radius: 5px; cursor: pointer;}
+.guider .active a { color: rgba(255, 255, 255, 0.8); background-color: rgba(51, 51, 51, 0.9);}
+.guider a:hover { background-color: rgba(255, 255, 255, 0.5); }
+.top { position: fixed; left: 0; right: 0; top: 0; z-index: 500; height: 50px; background-color: rgba(0, 0, 0, 0.6);}
+.top .menu { width: 1000px; margin: 0 auto; overflow: hidden;}
+.logo { float: left; margin-top: 9px;}
+#cl { position: absolute; top: 4px; left: 825px;}
+.nav1 { text-align: center; margin-top: 10px; font-size: 0px;}
+.nav1 li { display: inline-block; margin-left: 10px; }
+.nav1 span { display: inline-block; height: 30px; line-height: 30px; color: rgb(255, 255, 255); text-decoration: none; font-size: 18px; cursor: unset;}
+.nav1 a:hover { color: #83c3f3;}
+.section_content { margin-left: 190px; margin-top: 110px; height: 100%; width: 90%; z-index: 10; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px;}
+header { text-align: left; letter-spacing: 7px; color: rgba(255, 255, 255, 0.8); padding: 15px 0 0 50px; font: 50px "Microsoft Yahei";}
+.content-body { margin: 25px 0 50px 50px; padding: 50px 180px 100px 80px; background-color: rgba(255, 255, 255, 0.1); height: 100%; z-index: 11; border-radius: 5px; color: rgba(255, 255, 255, 0.9);}
+.content { padding-bottom: 100px;}
+.bottom-box { height: 50px; bottom: 0; left: 0; right: 0;}
+.subject-head { font-size: 45px; letter-spacing: 5px; margin-bottom: 20px;}
+.subject-little-head {font-size: 24px; margin-bottom: 10px;}
+.content-body ul li { font-size: 20px; margin-left: 15px; margin-bottom: 5px; cursor: pointer; display: table; letter-spacing: 2px; border-radius: 5px;}
+.content-body ul span { margin-right: 3px;}
+.btm-box { text-align: center; margin: 0 auto; margin-right: 190px;}
+.btn { font-size: 16px; letter-spacing: 3px; border-radius: 11px;}
+.btn-default { background: #3c71aa; color: white; border: 0;}
+.subject-body { margin-bottom: 20px;}

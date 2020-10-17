@@ -1,0 +1,37 @@
+.float {
+    background-color: #ffa7a7;
+}
+.section_head {
+    color: rgb(130, 86, 86);
+}
+.section_body {
+    padding-top: 382px;
+    padding-left: 68px;
+}
+
+.gongzhu {
+    padding-top: 222px;
+}
+
+.lg_block {
+    max-width: 364px;
+}
+
+.sign-content-keeper {
+    height: 81px;
+    width: auto;
+}
+.login_box {
+    margin-left: 40px;
+    /*background: url("../img/01.jpg") no-repeat;*/
+}
+.sign-item {
+    float: left;
+    width: 176px;
+}
+
+.sign-item input {
+    width: 100%;
+    max-width: 176px;
+    margin: 0;
+}

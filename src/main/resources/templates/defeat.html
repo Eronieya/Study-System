@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>defeat</title>
+</head>
+<body>
+<h1>注册失败</h1>
+<h2></h2>
+</body>
+<script>
+    let h2 = document.querySelector("h2");
+    let time = 5;
+    setInterval(function () {
+        if (time == 0) {
+            location.href = 'signup.html';
+        } else {
+            h2.innerHTML = '您将在' + time + '秒钟之后跳转到注册页面';
+            time--;
+        }
+    }, 1000)
+</script>
+</html>

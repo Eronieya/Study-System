@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/jquery.min.js"></script>
+    <style type="text/css">
+        p:not(:empty) {
+            padding: 15px;
+        }
+        .container {
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form-group">
+        <label>邮箱地址</label>
+        <input type="email" class="form-control" placeholder="请输入邮箱地址" id="email">
+    </div>
+    <!--  错误 bg-danger  正确 bg-success  -->
+    <p id="info"></p>
+    <span>可以更改我嘛</span>
+
+    <button id="bt1">点我</button>
+    <button id="bt2">我被点了</button>
+</div>
+</body>
+<script>
+    $(function () {
+        $("#email").blur(function () {
+            let mail = $(this).val();
+            console.log("前端发出："+mail);
+
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:8080/test",
+                data: {
+                    aaa: mail
+                },
+                success: function (msg) {
+                    console.log(msg);
+                    // 使用返回信息替换页面信息
+                    $("span").text(msg.message);
+                }
+            })
+        })
+
+        $("#bt1").click(function () {
+            console.log("bt1：我被点了");
+            $("#bt2").trigger("click");
+        })
+        $("#bt2").click(function () {
+            console.log("bt2：我被点了")
+        })
+    })
+</script>
+</html>

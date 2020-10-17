@@ -1,0 +1,132 @@
+body *{
+    margin: 0;
+    transition: 0.5s;
+}
+
+.float {
+    position: absolute;
+    float: left;
+    width: 514px;
+    height: 100%;
+    background-color: #cef3ff;
+    margin: 0;
+    padding: 0;
+    background-size: 514px;
+}
+.content {
+    position: relative;
+    float: right;
+    text-align: center;
+    width: 1404px;
+}
+.content nav {
+    width: 1404px;
+    padding: 30px 20px 0px 20px;
+}
+.content nav p {
+    text-align: right;
+}
+.section_body {
+    width: 100%;
+    height: 487px;
+    max-width: 514px;
+    padding-top: 314px;
+    padding-left: 68px;
+}
+.section_head {
+    padding: 64px 64px 30px;
+    max-width: 100%;
+    margin: 0;
+    font-size: x-large;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #677E86;
+}
+.login_box {
+    height: 520px;
+    text-align: center;
+}
+.login_box header {
+    letter-spacing: 5px;
+}
+.lg_block {
+    width: 100%;
+    max-width: 400px;
+    height: 490px;
+    padding-top: 235px;
+    margin: auto;
+}
+.lg_block label,input {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #F3F3F4;
+}
+
+.lg_block input {
+    height: 41px;
+    margin: 4px 2px 3px;
+    font-size: 100%;
+    /*box-shadow: 1px 1px 5px 3px pink;*/
+}
+.lg_block input:focus {
+    border: 1px solid pink;
+
+}
+.lg_block label {
+    width: 50%;
+    margin: 14px 0 4px;
+    background-color: white;
+    float: left;
+    text-align: left;
+}
+#sbm {
+    /*float: left;*/
+    margin: 20px auto;
+    height: 43px;
+    width: 200px;
+    background-color: #ea4c89;
+    color: white;
+    font-size: 100%;
+    font-weight: bold;
+    font-size: larger;
+    letter-spacing: 10px;
+    padding-left: 12px;
+    display: none;
+}
+
+#btn {
+    margin: 20px auto;
+    height: 43px;
+    width: 200px;
+    background-color: #ea4c89;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    letter-spacing: 10px;
+    padding-left: 12px;
+    border: 0;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+#btn:hover {
+    opacity: 1;
+}
+#btn:focus {
+    outline: 0;
+    box-shadow: 0 0 3px black;
+}
+
+input:focus{
+    outline: none;
+    border: 3px solid pink;
+    background-color: white;
+}
+
+.label {
+    font-size: 100%;
+    display: block;
+    max-width: 180px;
+    margin: 10px auto 0 auto;
+}

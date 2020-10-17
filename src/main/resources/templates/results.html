@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link th:href="@{/css/examination.css}" rel="stylesheet" type="text/css" href="../static/css/examination.css">
+    <script th:src="@{/js/jquery.min.js}" src="../static/js/jquery.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}" src="../static/js/bootstrap.min.js"></script>
+    <title>Result</title>
+    <style>
+        body { width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0);}
+        html {background-image: linear-gradient(to right, rgb(89, 92, 97) 0%, rgb(193, 198, 202) 100%);}
+        .content-body ul li { cursor: unset;}
+        .wrong {cursor: unset; color: red;}
+        .right {cursor: unset; color: green;}
+        .g {cursor: unset;}
+        .score-table { font-size: x-large; text-align: center;}
+        .score-table table { margin: 0 auto; width: 50%; height: 90px;}
+        .score-table th { text-align: center}
+        .score-table td { border: 1px solid whitesmoke;}
+    </style>
+</head>
+<body>
+<div class="section_content">
+    <div class="content">
+        <header>考试结果</header>
+        <div class="content-body">
+            <div class="score-table">
+                <table>
+                    <thead><th>你的得分</th></thead>
+                    <tbody><tr><td th:text="${score}"></td></tr></tbody>
+                </table>
+            </div>
+            <div class="subject-head">一、选择题</div>
+            <div th:each="ws:${wrongSubject}" th:attr="subjectid=${ws.getSubject().getId()}" class="subject">
+                <div class="subject-little-head"><span th:attr="id=${ws.getSubject().getId()}" th:text="${ws.getSubject().getId()}+'.'" class="num"></span><span th:text="${ws.getSubject().getTopic()}"></span></div>
+                <div class="subject-body">
+                    <ul>
+                        <!-- value:答案的值   li.parent.parent.find(".num").attr("id"):题号   data-checked:查看是否选中 -->
+                        <li value="A" data-checked="no"><span>A.</span><span th:text="${ws.getSubject().getA()}"></span></li>
+                        <li value="B" data-checked="no"><span>B.</span><span th:text="${ws.getSubject().getB()}"></span></li>
+                        <li value="C" data-checked="no"><span>C.</span><span th:text="${ws.getSubject().getC()}"></span></li>
+                        <li value="D" data-checked="no"><span>D.</span><span th:text="${ws.getSubject().getD()}"></span></li>
+                        <li class="g"><span th:text="'你的选择是:'+${ws.getUserChoice()}" class="wrong"></span><span th:text="'正确答案是:'+${ws.getRightChoice()}" class="right"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="btm-box">
+                <button class="btn btn-default">返回首页</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".btn").on("click", function () {
+            window.location.href='/index';
+        })
+    })
+</script>
+</body>
+
+</html>

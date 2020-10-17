@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/examination.css">
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>考试页面</title>
+    <style>
+        body { width: 100%; height: 100%; background-color: rgba(255, 255, 255, 0);}
+        html {background-image: linear-gradient(to right, rgb(89, 92, 97) 0%, rgb(193, 198, 202) 100%);}
+    </style>
+    <script>
+        $(function () {
+            // 当点击选项的时候发生的事件
+            $(".subject li").on("click", function () {
+                $(this).css({
+                    backgroundColor: "rgba(255, 255, 255, 0.7)",
+                    color: "rgba(0, 0, 0, 0.8)",
+                    fontWeight: "bold"
+                }).attr("data-checked", "yes").siblings().css({
+                    backgroundColor: "rgba(255, 255, 255, 0)",
+                    color: "rgba(255, 255, 255, 0.9)",
+                    fontWeight: "normal"
+                }).attr("data-checked", "no");
+            })
+
+            // 当经过选项的发生的事件
+            $(".subject li").hover(function () {
+                // $(this).fadeTo(0.5, 0.5).siblings().fadeTo(0.5, 1);
+                $(this).fadeTo(0.5, 0.5);
+            },
+            function () {
+                $(this).fadeTo(0.5, 1);
+            })
+        })
+
+        // 声明跳转函数
+        function jump(sel) {
+            $("html,body").animate({ scrollTop: $(sel).offset().top }, 800);
+        }
+
+        // 导航栏点击触发事件
+        $(function () {
+            $(".guider a").on("click", function () {
+                jump($(this).attr("href"));
+                console.log($(this).attr("href"));
+            });
+        })
+
+        // 提交按钮触发事件
+        $(function () {
+            $(".btn").on("click", function () {
+                console.log($(".subject"));
+                //
+                for (let i = 0; i < $(".subject").length; i++){
+                    // 题号
+                    console.log($(".subject").eq(i).attr("subjectid"));
+                    // 所选答案 li[data-checked *= 'yes'] 表示存在data-checked属性并且值为yes的li对象
+                    console.log($(".subject").eq(i).find("li[data-checked *= 'yes']").attr("value"));
+
+                }
+
+                // 获取所有已选择的元素
+                // console.log($(".subject li[data-checked *= 'yes']"));
+                // console.log($(".subject li[data-checked *= 'yes']").length);
+                // console.log($(".subject li[data-checked *= 'yes']").attr("value"));
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+
+<!--导航模块-->
+<div class="guider">
+    <span>导 航</span>
+    <ul>
+        <li><a href="#1">1</a></li>
+        <li><a href="#2">2</a></li>
+        <li><a href="#3">3</a></li>
+        <li><a href="#4">4</a></li>
+        <li><a href="#5">5</a></li>
+    </ul>
+</div>
+
+<!-- 页头的计时模块 -->
+<div class="top">
+    <div class="menu">
+        <ul class="nav1">
+            <li><img src="../static/img/clock.png" width="40px" height="40px" id="cl"></li>
+            <li><span>考试剩余时间:</span></li>
+            <li><span id="time"><span class="hour">00</span>:<span class="minute">00</span>:<span class="second">00</span></span></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 页内的考试模块 -->
+<div>
+    <div class="section_content">
+        <div class="content">
+            <header>J2EE考试内容</header>
+            <div class="content-body">
+                <div class="subject-head">一、选择题</div>
+                <!--  试题框  -->
+                <!-- .subject的div上使用th:each来遍历数据库所得题目  .num中动态获取id  使用th:each结构也可以遍历  -->
+                <div class="subject" subjectid="1">
+                    <div class="subject-little-head"><span id="1" class="num">1.</span><span>相比于Spring，基于EJB得JavaEE技术作为企业级应用解决方案得主要优势体现在（），使得开发出得应用是可向外伸缩得（scale-out）。</span></div>
+                    <div class="subject-body">
+                        <ul>
+                            <!-- value:答案的值   li.parent.parent.find(".num").attr("id"):题号   data-checked:查看是否选中 -->
+                            <li value="A" data-checked="no"><span>A.</span><span>安全性</span></li>
+                            <li value="B" data-checked="no"><span>B.</span><span>运行的时空效率</span></li>
+                            <li value="C" data-checked="no"><span>C.</span><span>事务处理能力</span></li>
+                            <li value="D" data-checked="no"><span>D.</span><span>支持分布的能力</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subject" subjectid="2">
+                    <div class="subject-little-head"><span id="2">2.</span>在JSP中使用&lt;jsp:getProperty&gt;标记时，不会出现的属性是（）</div>
+                    <div class="subject-body">
+                        <ul>
+                            <!-- value:答案的值   index:题号   data-checked:查看是否选中 -->
+                            <li value="A" data-checked="no"><span>A.</span>Name</li>
+                            <li value="B" data-checked="no"><span>B.</span>Property</li>
+                            <li value="C" data-checked="no"><span>C.</span>value</li>
+                            <li value="D" data-checked="no"><span>D.</span>以上皆不会出现</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subject" subjectid="3">
+                    <div class="subject-little-head"><span id="3">3.</span>J2EE中，（）类的（）方法用于创建对话</div>
+                    <div class="subject-body">
+                        <ul>
+                            <!-- value:答案的值   index:题号   data-checked:查看是否选中 -->
+                            <li value="A" data-checked="no"><span>A.</span>HttpServletRequest , getSession;</li>
+                            <li value="B" data-checked="no"><span>B.</span>HttpServletRequest , NewSession;</li>
+                            <li value="C" data-checked="no"><span>C.</span>HttpSession , newInstance;</li>
+                            <li value="D" data-checked="no"><span>D.</span>HttpSession , getSession;</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subject" subjectid="4">
+                    <div class="subject-little-head"><span id="4">4.</span>以下（）可用于检索session属性的userid的值？</div>
+                    <div class="subject-body">
+                        <ul>
+                            <!-- value:答案的值   index:题号   data-checked:查看是否选中 -->
+                            <li value="A" data-checked="no"><span>A.</span>session.getAttribute("userid");</li>
+                            <li value="B" data-checked="no"><span>B.</span>session.setAttribute("userid");</li>
+                            <li value="C" data-checked="no"><span>C.</span>request.getParameter("userid");</li>
+                            <li value="D" data-checked="no"><span>D.</span>request.getAttribute("userid");</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subject" subjectid="5">
+                    <div class="subject-little-head"><span id="5">5.</span><span>在J2EE中以下对Request.Dispatcher描述正确的是（）</span></div>
+                    <div class="subject-body">
+                        <ul>
+                            <!-- value:答案的值   index:题号   data-checked:查看是否选中 -->
+                            <li value="A" data-checked="no"><span>A.</span>JSP中有一个隐含的对象dispatcher，它的类型是Request.Dispatcher;</li>
+                            <li value="B" data-checked="no"><span>B.</span>ServletConfig有一个方法，getRequest.Dispatcher可以取回Request.Dispatcher对象;</li>
+                            <li value="C" data-checked="no"><span>C.</span>Request.Dispatcher有一个方法，forward可以把请求继续传递给别的servlet或者JSP界面;</li>
+                            <li value="D" data-checked="no"><span>D.</span>JSP中有个隐含的默认对象request，他的类型是Request.Dispatcher</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="btm-box">
+                <button class="btn btn-default">提交</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    //倒计时模块
+    // 需要传递一个时长参数timelen单位为分钟   将其化成毫秒数 例如为90分钟
+    // 为防止刷新会出现重新倒计时的bug，所以inputTime需要在数据库里获取， 在点击开始考试的时候把事件存储到数据库里
+    let timelen = 90; // 此时为分钟
+    timelen = 90 * 60 * 1000; // 此时为毫秒
+    let hour = document.querySelector('.hour');
+    let minute = document.querySelector('.minute');
+    let second = document.querySelector('.second');
+    let inputTime = new Date().getTime() + timelen;
+    // let inputTime = +new Date('2020-6-12 00:00:00'); //返回指定时间总毫秒数
+
+    //先调用一次函数防止刷新时候有空白
+    countDown();
+    //开启定时器
+    setInterval(countDown, 1000);
+
+    function countDown() {
+        let nowTime = +new Date(); //返回当前时间得毫秒数
+        let times = (inputTime - nowTime) / 1000;
+        let h = parseInt(times / 60 / 60 % 24);
+        h = h < 10 ? '0' + h : h;
+        hour.innerHTML = h;
+        let m = parseInt(times / 60 % 60);
+        m = m < 10 ? '0' + m : m;
+        minute.innerHTML = m;
+        let s = parseInt(times % 60);
+        s = s < 10 ? '0' + s : s;
+        second.innerHTML = s;
+    }
+</script>
+</body>
+</html>

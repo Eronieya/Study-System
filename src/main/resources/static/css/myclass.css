@@ -1,0 +1,47 @@
+* { margin: 0; padding: 0;}
+ul { list-style-type: none; }
+.top { position: fixed; left: 0; right: 0; top: 0; z-index: 999; height: 50px; background-color: rgba(0, 0, 0, 0.6);}
+.top .menu { width: 1000px; margin: 0 auto; overflow: hidden;}
+.logo { float: left; margin-top: 9px;}
+.nav1 { float: right; margin-top: 10px; font-size: 0;}
+.nav1 li { display: inline-block; margin-left: 40px;}
+.nav1 a { display: inline-block; height: 30px; line-height: 30px; font-size: 12px; color: rgb(255, 255, 255); text-decoration: none;}
+.nav1 a:hover { color: #83c3f3;}
+#menu { margin: 0; padding: 0; position: fixed; left: 46px; top:350px ;list-style-type: none; z-index: 70;}
+#menu li {  margin:  30px 10px 0 0; font-size: 14px;}
+#menu a {  padding: 11px 20px; background-color: rgba(255, 255, 255, 0.8); color: rgba(51, 51, 51, 0.9); text-decoration: none; border-radius: 5px;}
+#menu .active a { color: rgba(255, 255, 255, 0.8); background-color: rgba(51, 51, 51, 0.9); transition: 1s}
+#hide {  margin: 25px; padding: 0; position: fixed; left: 51px; top: 300px ; z-index: 70; transition: 1s}
+#hide a {  text-align:center ; padding: 10px 20px;background: url("../img/back.png") no-repeat; background-size: 40px 40px ; text-decoration: none; border-radius: 5px; cursor: pointer;}
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+.section_content {position: relative; top:52px; right: 0; bottom: 0px; left: 195px; height: 90%; z-index: 10; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px;}
+.section1 { background: url("../img/bg-8.jpg") 50%; }
+.section2 { background: url("../img/bg-2.jpg") 50%; }
+.section3 { background: url("../img/bg-4.jpg") 50%; }
+.section4 { background: url("../img/bg-5.jpg") 50%; }
+header { text-align: left; letter-spacing: 6px; color: rgba(255, 255, 255, 0.9); padding: 15px 0 0 30px;}
+.content-body { position: absolute; right: 225px; bottom: 20px; left: 30px; background-color: rgba(255, 255, 255, 0.1); height: 87.5%; z-index: 11; border-radius: 5px;}
+.nav { font-size: 20px;}
+.nav a,li { color: rgba(255, 255, 255, 0.5); border-bottom: 0 ;}
+.nav-tabs { border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+.nav-tabs>li>a:hover { background-color: rgba(255, 255, 255, 0.1);}
+.nav>li>a:focus, .nav>li>a:hover { border-color: rgba(255, 255, 255, 0.2) ; background-color: rgba(255, 255, 255, 0.1);}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover { border-color: rgba(255, 255, 255, 0.2) ; background-color: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); }
+.tab-pane ul{ padding: 25px 25px 0 45px; text-align: center; z-index: 12;}
+.my-item { width: 208px; height: 275px; border: 1px solid rgba(255, 255, 255, 0.56); margin: 15px 40px 15px 15px; display: inline; float: left; overflow: hidden; cursor: pointer; border-radius: 5px; transition: 1s;}
+.my-item-bottom span { display: block; font-size: small; line-height: 27px; transition: 1s;}
+.my-item-head {  width: 208px; height: 208px; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.56); transition: 1s;}
+.test { background: url("../img/text.png") 25px 25px no-repeat; background-size: 150px 150px; opacity: 0.6;}
+.book { background: url("../img/book.png") 25px 25px no-repeat; background-size: 150px 150px; opacity: 0.6;}
+.good { background: url("../img/good.png") 25px 25px no-repeat; background-size: 150px 150px; opacity: 0.6;}
+.book2 { background: url("../img/book2.png") 25px 25px no-repeat; background-size: 150px 150px; opacity: 0.6;}
+.test2 { background: url("../img/test.png") 25px 25px no-repeat; background-size: 150px 150px; opacity: 0.6;}
+.idea { background: url("../img/idea.png") 25px 25px no-repeat; background-size: 150px 150px; opacity: 0.6;}
+.my-item-head:hover {opacity: 1;}
+.my-item-head p { color: rgba(255, 255, 255, 0.8); text-align: center; height: 208px; line-height: 195px; transition: 1s;}
+.my-item-bottom { width: 208px; height: 67px; transition: 1s;}
+.head-img { float: left; height: 67px; width: 67px; cursor: pointer; border-right: 1px solid rgba(255, 255, 255, 0.56); z-index: 13; transition: 1s;}
+.head-img p { color: rgba(255, 255, 255, 0.8); text-align: center; font-size: 40px; line-height: 60px; transition: 1s;}
+.class-name { float: left; width: 141px; height: 33px; border-bottom: 1px solid rgba(255, 255, 255, 0.56); z-index: 13; transition: 1s;}
+.teacher {  float: left; width: 141px; height: 33px; z-index: 13; transition: 1s;}
+.tips { background-color: red;height: 40px;width: 40px;float: right;line-height: 40px;border-radius: 100%;margin-right: 10px;margin-top: 10px;color: white;font-size: 17px;letter-spacing: 0; transition: 1s;}
